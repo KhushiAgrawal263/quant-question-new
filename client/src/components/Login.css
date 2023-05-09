@@ -1,0 +1,187 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    border:1px solid rgb(209, 207, 207);
+    border-radius: 4px;
+    padding:20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.login-page{
+    width:500px;
+    margin: auto;
+    margin-top:5%;    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.signin-page{
+    width:500px;
+    margin: auto;
+    margin-top: 5%;    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+.login-logo{
+    width:200px;
+    height:120px;
+    object-fit: inherit;
+    justify-content: center;
+}
+
+.inputBox{
+    padding:10px;
+    border:1px solid rgb(209, 207, 207);
+    width:400px;
+    margin:10px;
+    border-radius: 4px;
+}
+
+.signinputBox{
+    padding:10px;
+    border:1px solid rgb(209, 207, 207);
+    width:400px;
+    margin:10px;
+    border-radius: 4px;
+}
+
+.logbtn{
+    background-color: rgb(26, 146, 221);
+    border:1px solid rgb(26, 146, 221);
+    color:white;
+    width:400px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logbtn:hover{
+    background-color: rgb(7, 110, 212);
+    border-radius:1px solid  rgb(7, 110, 212);
+}
+
+.last-block{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.forgot-pass,
+.sign-pass{
+    text-decoration: none;
+    color:rgb(69, 69, 69);
+}
+
+.forgot-pass{
+    position: relative;
+    left:26px;
+}
+
+.sign-pass{
+    margin: auto;
+}
+
+.forgot-pass:hover,
+.sign-pass:hover{
+   text-decoration: underline;
+}
+
+.forgot,
+.sign{
+    text-decoration: none;
+    color:rgb(69, 69, 69);
+}
+
+.forgot{
+    position: relative;
+    left:27px;
+}
+
+.sign{
+    position: relative;
+    left:-27px;
+}
+.forgot:hover,
+.sign:hover{
+   text-decoration: underline;
+}
+
+.eyePassword{
+    position: relative;
+    top:20px;
+    left:-50px;
+}
+
+.passwordfield{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left:10px;
+}
+
+.signpasswordfield{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left:14px;
+    width:450px;
+}
+
+
+.having{
+    display: flex;
+    justify-content: center;
+    gap:60px;
+}
+
+@media screen and (max-width:540px){
+   .login-page{
+    width:340px;
+    /* height:450px; */
+   }  
+
+   .signin-page{
+    width:85%;
+    margin-top: 20%;
+    /* height:450px; */
+   } 
+   
+   .inputBox{
+    width:280px;
+    padding:6px;
+   }
+
+   .signinputBox{
+    width:100%;
+    padding:6px;
+   }
+
+   .signpasswordfield{
+    width:113%;
+    left:10px;
+   }
+   .logbtn{
+    width:280px;
+   }
+   
+.eyePassword{
+    top:16px;
+    left:-40px;
+}
+
+.forgot{
+    left:11px;
+}
+
+.sign{
+    left:-10px;
+}
+
+}
