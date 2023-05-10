@@ -27,6 +27,8 @@ function Questions() {
   const user = JSON.parse(localStorage.getItem("quantuser"));
   // console.log(user);
 
+  c
+
   const [firmData, setFirmData] = useState();
   const [firmVal, setFirmVal] = useState('');
   const [divisionVal, setDivisionVal] = useState('');
@@ -919,7 +921,7 @@ function Questions() {
                       <option value={firm.name}>{firm.name}</option>
                     ))
                   }
-                  
+
 
                 </select>
 
@@ -1142,7 +1144,7 @@ function Questions() {
                 </div>
               </div>
             </div>
-           
+
 
 
           </div>
