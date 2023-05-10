@@ -31,8 +31,8 @@ function Header() {
     window.location.href = '/login'
   }
 
- 
-  
+
+
   return (
     <div className="header">
       <div className={user? "main-user":"main"}>
@@ -46,9 +46,9 @@ function Header() {
             <>
               <div className="right">
                 { loc !== '/questions' && <Link to="/questions">
-                  <button className="que-btn ques-user" onClick={() => { setClicked(true) }}>Questions</button>
+                  <button className="que-btn ques-user" onClick={() => { setClicked(true) }}>Q</button>
                 </Link>}
-                
+
                 <div className="show-my-user" onClick={()=>setOpen(!open)}>
                   <FaUserCircle className="curs" size="25"/>
                   <IoMdArrowDropdown className="curs" size="15"/>
@@ -57,7 +57,7 @@ function Header() {
                   open &&
                     <div className="user-block">
                        <Link to='/profile' className="mylinks"><div className="gap-user"><FaUser className="icon-user"/>{user.name}</div></Link>
-                       <Link to='/progress' className="mylinks"><div className="gap-user"><FaChartPie className="icon-user"/>Progress</div></Link> 
+                       <Link to='/progress' className="mylinks"><div className="gap-user"><FaChartPie className="icon-user"/>Progress</div></Link>
                        <Link to='/submissions' className="mylinks"><div className="gap-user"><img className="icon-user my-sub" src={progress} alt=""/><div className="subm">Submissions</div></div></Link>
                        <Link to='/faq' className="mylinks"><div className="gap-user"><FaQuestion className="icon-user"/>FAQs</div></Link>
                        <Link to='/resources' className="mylinks"><div className="gap-user"><GrResources className="icon-user"/>Resources</div></Link>
@@ -66,7 +66,7 @@ function Header() {
                     </div>
                 }
               </div>
-    
+
             </>
             :
             loc === '/login' || loc === '/signup' ?
@@ -88,7 +88,7 @@ function Header() {
             <button className="que-btn ques-user ques-web" onClick={() => { setClicked(true) }}>Questions</button>
             <button className="ques-mobile"  onClick={() => { setClicked(true) }}>Questions</button>
           </Link>}
-          
+
           <div onClick={()=>setOpen(!open)}>
             <FaUserCircle className="curs" size="25"/>
             <IoMdArrowDropdown className="curs" size="15"/>
@@ -96,10 +96,10 @@ function Header() {
           {
             open && <div className="user-block">
                  <Link to='/profile' className="mylinks"><div className="gap-user"><FaUser className="icon-user"/>{user.name}</div></Link>
-                 <Link to='/progress' className="mylinks"><div className="gap-user"><FaChartPie className="icon-user"/>Progress</div></Link> 
+                 <Link to='/progress' className="mylinks"><div className="gap-user"><FaChartPie className="icon-user"/>Progress</div></Link>
                  <Link to='/submissions' className="mylinks"><div className="gap-user"><img className="icon-user my-sub" src={progress} alt=""/><div className="subm">Submissions</div></div></Link>
                  <Link to='/faq' className="mylinks"><div className="gap-user"><FaQuestion className="icon-user"/>FAQs</div></Link>
-                 <Link to='/resources' className="mylinks"><div className="gap-user"><GrResources className="icon-user"/>Resources</div></Link> 
+                 <Link to='/resources' className="mylinks"><div className="gap-user"><GrResources className="icon-user"/>Resources</div></Link>
                  <Link to='/change_password' className="mylinks"><div className="gap-user"><FaExchangeAlt className="icon-user"/>Change Password</div></Link>
                  <Link  className="mylinks"><div className="gap-user" onClick={logoutHandler}><TbLogout className="icon-user"/>Logout</div></Link>
               </div>
@@ -132,7 +132,7 @@ function Header() {
 
         }
 
-       
+
 
       </div>
     </div>
