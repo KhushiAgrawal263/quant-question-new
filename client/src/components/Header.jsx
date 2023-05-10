@@ -71,13 +71,13 @@ function Header() {
             :
             loc === '/login' || loc === '/signup' ?
               <div className='right'>
-                <Link to='/signup'><button className='que-btn' onClick={() => { setClicked(true) }}>Sign Up</button></Link>
-                <Link to='/login'><button className='que-btn' onClick={() => { setClicked(true) }}>Log In</button></Link>
+                <Link to='/signup'><button className='que-btn' onClick={() => { setClicked(true) }}>S</button></Link>
+                <Link to='/login'><button className='que-btn' onClick={() => { setClicked(true) }}>L</button></Link>
               </div>
               :
               <div className='right'>
-                <Link to='/questions'><button className='que-btn' onClick={() => { setClicked(true) }}>Questions</button></Link>
-                <Link to='/login'><button className='que-btn' onClick={() => { setClicked(true) }}>Log In</button></Link>
+                <Link to='/questions'><button className='que-btn' onClick={() => { setClicked(true) }}>Q</button></Link>
+                <Link to='/login'><button className='que-btn' onClick={() => { setClicked(true) }}>L</button></Link>
               </div>
         }
 
