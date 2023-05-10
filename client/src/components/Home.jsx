@@ -19,6 +19,8 @@ import { RiLineChartFill } from 'react-icons/ri';
 import { FaPuzzlePiece } from 'react-icons/fa';
 import { Link, useNavigate } from "react-router-dom";
 
+console.log("deployed")
+
 const Home = () => {
 
   // if user already logged in, redirect to questions page
