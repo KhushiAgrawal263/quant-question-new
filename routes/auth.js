@@ -5,12 +5,13 @@ const User = require('../models/User');
 var AES = require("crypto-js/aes");
 var CryptoJS = require("crypto-js");
 var jwt = require('jsonwebtoken');
+const {JWT_SECRET} = require('../config/keys')
 
 router.post("/register", async (req, res) => {
   try {
     console.log(req.body);
     const { name, email, password,phoneNo,role } = req.body;
-    
+
     // Validate user input
     if (!(email && password && name )) {
       res.status(400).json("All input is required");
@@ -24,7 +25,7 @@ router.post("/register", async (req, res) => {
         const user = await User.create({
           name,
           email: email.toLowerCase(), // sanitize: convert email to lowercase
-          password: CryptoJS.AES.encrypt(req.body.password, process.env.JWT_SecretKey).toString(),
+          password: CryptoJS.AES.encrypt(req.body.password, JWT_SECRET).toString(),
           role: role,
           phoneNo:phoneNo
         });
@@ -48,16 +49,16 @@ router.post("/login", async (req, res) => {
     const user = await User.aggregate([{ $match: { email: email } }]);
     console.log(user[0].password);
     console.log(user[0].email);
-    var bytes = CryptoJS.AES.decrypt(user[0].password, process.env.JWT_SecretKey);
+    var bytes = CryptoJS.AES.decrypt(user[0].password, JWT_SECRET);
     var originalPassword = bytes.toString(CryptoJS.enc.Utf8);
- 
+
     if (!user || user.length < 1) {
       res.status(401).json("wrong email or password");
     } else if (originalPassword !== password || !user[0].email) {
       res.status(401).json("wrong email or password")
     } else if (user[0].role != role) {
       res.status(401).json("Not a valid user!")
-    } 
+    }
     else {
       const userDetails = {
         id: user[0]._id,
@@ -75,7 +76,7 @@ router.post("/login", async (req, res) => {
 router.put("/change/password/:id", async (req, res) => {
   try {
     const user = await User.find({ _id: req.params.id });
-    var bytes = CryptoJS.AES.decrypt(user[0].password, process.env.JWT_SecretKey);
+    var bytes = CryptoJS.AES.decrypt(user[0].password, JWT_SECRET);
     var originalPassword = bytes.toString(CryptoJS.enc.Utf8);
 
     // console.log(originalPassword)
@@ -84,7 +85,7 @@ router.put("/change/password/:id", async (req, res) => {
       if (req.body.currpass === originalPassword) {
         if (req.body.newpass !== "") {
           // console.log(req.body.newpass, user[0].password);
-          const updatedPassword = CryptoJS.AES.encrypt(req.body.newpass, process.env.JWT_SecretKey).toString()
+          const updatedPassword = CryptoJS.AES.encrypt(req.body.newpass, JWT_SECRET).toString()
           // console.log(updatedPassword)
           await User.updateOne({ _id: req.params.id }, { password: updatedPassword }, { new: true })
           res.status(200).json("Password Changed Successfully...");

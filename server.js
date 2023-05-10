@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const {mongoose} = require('mongoose');
 const bodyParser = require('body-parser')
+const {JWT_SECRET,MOGOURI} = require('./config/keys')
 const cors = require('cors');
 const app = express();
 
@@ -14,11 +15,9 @@ const categoryController = require('./routes/category');
 const resourceController = require('./routes/resource');
 
 dotenv.config();
-const port = process.env.PORT;
-const mongo_url = process.env.MONGO_URL;
 
 mongoose.set('strictQuery', false);
-mongoose.connect(mongo_url,()=>{
+mongoose.connect(MOGOURI,()=>{
     console.log("DB connection successful!!!");
 })
 
@@ -42,6 +41,6 @@ if(process.env.NODE_ENV == "production"){
     })
 }
 
-app.listen(port,()=>{
-    console.log(`Server is listening at ${port}`);
+app.listen(8000,()=>{
+    console.log(`Server is listening at 8000`);
 })

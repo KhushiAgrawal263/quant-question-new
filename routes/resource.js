@@ -4,15 +4,12 @@ const Resources = require('../models/Resources');
 const cloudinary = require('cloudinary');
 const multer = require('multer');
 const path = require("path")
-
-console.log(process.env.cloud_name)
-console.log(process.env.api_key)
-console.log(process.env.api_secret)
+const {cloud_name, api_key, api_secret} = require('../config/keys')
 
 cloudinary.config({
-  cloud_name: "damv4gxcs",
-  api_key: "959848926367614",
-  api_secret: "aaLhga9HAArYEc3iDb16Rx2YT2I"
+  cloud_name: cloud_name,
+  api_key: api_key,
+  api_secret: api_secret
 });
 
 const upload = multer({
