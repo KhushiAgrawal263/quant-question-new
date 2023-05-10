@@ -85,8 +85,8 @@ function Header() {
           user ?
           <div className="right user-right">
           { loc !== '/questions' && <Link style={{textDecoration:"none"}} to="/questions">
-            <button className="que-btn ques-user ques-web" onClick={() => { setClicked(true) }}>Questions</button>
-            <button className="ques-mobile"  onClick={() => { setClicked(true) }}>Questions</button>
+            <button className="que-btn ques-user ques-web" onClick={() => { setClicked(true) }}>Q</button>
+            <button className="ques-mobile"  onClick={() => { setClicked(true) }}>Q</button>
           </Link>}
 
           <div onClick={()=>setOpen(!open)}>
@@ -120,7 +120,7 @@ function Header() {
            ) : (
              <div className="mobile-right">
                <Link to="/questions">
-                 <button className="que-btn" onClick={() => { setClicked(true) }}>Questions</button>
+                 <button className="que-btn" onClick={() => { setClicked(true) }}>Q</button>
                </Link>
                <Link to="/login">
                  <button className="que-btn" onClick={() => { setClicked(true) }}>Log In</button>
